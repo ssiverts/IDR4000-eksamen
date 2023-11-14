@@ -1,0 +1,28 @@
+project:
+  type: book
+
+book:
+  title: "IDR4000 Mappeeksamen"
+  author: "Kandidatnr"
+  date: "11/17/2023"
+  chapters:
+    - index.qmd
+    - 01-reliabilitet.qmd
+    - 02-vitenskapsfilosofi.qmd
+    - references.qmd
+
+bibliography: resources/references.bib
+
+crossref:
+  fig-title: "**Figur**"
+  tbl-title: "**Tabell**"
+  fig-
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+
