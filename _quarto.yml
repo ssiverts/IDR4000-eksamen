@@ -2,9 +2,12 @@ project:
   type: book
 
 book:
-  title: "IDR4000 Mappeeksamen"
-  author: "406"
-  date: "11/17/2023"
+  title: "IDR4000 Kvantitativ Metode og Statstikk"
+  subtitle: "Mappeeksamen"
+  repo-url: https://github.com/ssiverts/IDR4000-eksamen.git
+  note: "9406 ord"
+  author: "406; Tal ord: 5104"
+  date: "11/16/2023"
   chapters:
     - index.qmd
     - kapittel/01-reliabilitet.qmd
