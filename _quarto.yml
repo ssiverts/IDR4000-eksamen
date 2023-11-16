@@ -3,7 +3,7 @@ project:
 
 book:
   title: "IDR4000 Mappeeksamen"
-  author: "Kandidatnr"
+  author: "406"
   date: "11/17/2023"
   chapters:
     - index.qmd
@@ -12,6 +12,7 @@ book:
     - kapittel/03-vitenskapsfilosofi.qmd
     - kapittel/04-studiedesign.qmd
     - kapittel/05-analyse-av-repeterte-forsøk.qmd
+    - references.qmd
 
 bibliography: kapittel/references.bib
 csl: resources/vancouver.csl

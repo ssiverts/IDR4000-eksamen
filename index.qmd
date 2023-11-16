@@ -1,0 +1,3 @@
+# Forord
+
+Link til GitHub-repository: https://github.com/ssiverts/IDR4000-eksamen.git
