@@ -1,9 +1,0 @@
----
-bibliography: references.bib
-editor_options: 
-  chunk_output_type: console
----
-
-# Vitenskapsfilosofi
-
-## Ny overskrift

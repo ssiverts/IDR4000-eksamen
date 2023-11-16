@@ -1,0 +1,52 @@
+---
+title: "Studiedesign"
+bibliography: references.bib
+author: Sivert Solheim
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Introduksjon
+
+Eg har valgt å analysere fem originalartiklar som ser på effekten av ulike styrketreningsvolum på utvikling av maksimal styrke og hypertrofi. Dei fem artiklane eg har valgt å analysere er Brigatto et al., 2019 @Brigatto2019, Ostrowski et al., 1997 @Ostrowski1997, Rhea et al., 2002 @Rhea2002, Schoenfeld et al., 2019 @Schoenfeld2019 og Aube et al., 2020 @Aube2020.
+
+## Generelt om studiane
+
+Alle dei fem studiane er randomiserte, kontrollerte studiar (RCT) med ei intervensjonslengd på 8, 10 eller 12 veker. Intervensjonen var for alle studiane treningsprogram med ulike volum for to @Rhea2002 eller tre [@Brigatto2019; @Ostrowski1997; @Schoenfeld2019; @Aube2020] intervensjonsgrupper. Ingen av studiane hadde kontrollgruppe. Alle studiane var utført på relativt unge menn (18-35 år) med treningsbakgrunn innan styrketrening. Vidare utførte alle studiane eitt eller fleire mål på maksimal styrke ved baseline og etter intervensjon. I tillegg målte alle studiane, utanom Rhea et al. @Aube2020, også muskelmasse ved baseline og etter intervensjon. Rhea et al. @Rhea2002 evaluerte utfallsvariablane også halvvegs i intervensjonen.
+
+## Diskusjon av metode og studiedesign
+
+Alle dei fem studiane var gjennomført som parallellgruppestudiar, som er ei form for RCT-studie. I parallellgruppestudiar blir kvar gruppe i studien tildelt ein intervensjon, og deretter følgt parallelt. Dette står i kontrast til overkryssingstudiar, der gruppene undervegs i studien byttar intervensjon @Legeforening. RCT-studiar er rekna som gullstandarden innan primærstudiar, ettersom den, i motsetnad til observasjonelle studiar, kan seie noko om kausalitet @Hulley2013. Det vil seie at RCT studiar i tillegg til å finne skilnadar i utfallsvariablar mellom og innad i ulike grupper også kan seie noko om årsaken til skilnaden. Nokre av grunnane for at RCT studiar gjev ein kausal effekt, er at dei er gode på å redusere konfundarar (engelsk: ‘confounders’) og utvalsskeivskap (engelsk: ‘selection bias’). Dette kan sjåast som ein styrke ved studiedesignet til dei fem studiane.
+
+Ideelt sett skal RCT studiar vere dobbelt blinda. Det vil sei at både dei som mottar og dei som gjev ein intervensjon ikkje skal vite hvilken, dersom nokon, intervensjon som blir motteke eller gjeve @Hulley2013. Ettersom deltakarane og forskarane i studiane eg har valgt må vite kva intervensjon som blir brukt for å kunne gjennomføre studien, kan dobbel blinding vere utfordrande å gjennomføre. Kun éin av studiane @Aube2020 blinda forskarane som utførte målingar på utfallsvariablane for intervensjonsgruppene. Ingen av studiane brukte blinding på deltakarane. Problemet med å ikkje bruke blinding, er at forskarane underbevisst til dømes kan overestimere effekten for gruppene med høgt treningsvolum og/eller underestimere effekten for gruppene med lågt treningsvolum. Vidare kan mangel av blinding på deltakarane påvirke til dømes åtferd, treningsinnsats eller føre til placebo-efffekt, noko som i sin tur kan verke inn på resultatet @Hulley2013.
+
+Vidare kan det tekjast at studiane med fordel kunne inkludert ei kontroll gruppe utan intervensjon, for å kontrollere om deltaking på pre-testen i seg sjølv – eller andre forhold deltaking i studien fører med seg - betra resultatet på post-testen.
+
+Ingen av studiane hadde deltakarar eldre enn 35 år. Ettersom muskelmasse vanlegvis aukar naturleg fram til ein er omtrent 30 år gamle [@Landi2020; @Holloszy2000], kan vi ikkje ekskludere at dette kan forklare noko av den estimerte effekten av intervensjonen i studiane, noko som også kan vere eit argument for å inkludere ei kontrollgruppe.
+
+Den spesifikke utvalet i dei fem studiane kan sjåast både positivt og negativt. Det er positivt i den forstand at resultata blir spesifikke for den populasjonen utvalet er henta frå (styrke-trente menn i alderen 18-35 år). På den andre sida fører det spesifikke utvalet til at vi ikkje kan vere sikre på om resultata kan anvendast for den øvrige befolkinga, dvs. for til dømes kvinner, utrente og personar under 18 år eller over 35 år.
+
+Vidare kan ein stille spørsmål ved den relativt korte intervensjonsperioden. Som tidlegare nevnt, hadde studiane ein intervensjonsperiode på mellom 8 og 12 veker. Samtlege studiar var gjort på menn som har drive med styrketrening i minst eitt år, og fleire av deltakarane hadde drive med styrketrening vesentleg lenger enn dette. Ifølgje ein studie frå 2019 @Krzysztofik2019, avtar hypertrofi og styrkegevinstar desto betre trena ein er. Ein lenger intervensjonsperiode kunne difor kanskje vore fordelaktig for å auke ein eventuell skilnad mellom intervensjonsgruppene og dermed redusere risikoen for at tilfeldigheiter verkar inn på resultatet. Ufordelen ved å gjere intervensjonsperioden lenger, er at studien blir meir ressurskrevjande å gjennomføre, samt. at det kanskje blir vanskelegare å rekruttere deltakarar.
+
+## Måling av utfallsvariablar
+
+Metode for å evaluere utfallsvariabel var ganske like mellom studiane. Alle studiane brukte «éin repitisjon maksimum» (1RM) med frivekter for å måle maksimal styrke. 1RM går ut på å løfte ei så tung vekt som ein klarar éin gong. Tre av studiane [@Brigatto2019; @Ostrowski1997; @Schoenfeld2019] målte 1RM for knebøy og benkpress, éin studie @Rhea2002 målte 1RM for knebøy og beinpress, medan den siste studien @Aube2020 målte 1RM kun for knebøy.
+
+Å bruke 1RM med frivekter for å teste maksimal styrke kan kanskje ha nokre avgrensingar. For det første er bruk av frivekter avhengig av teknikk. Dersom ein har god teknikk, kan det tenkjast at ein kan løfte meir vekt enn nokon som har dårleg teknikk, sjølv om kraftutviklinga er den same. Ettersom ein ikkje kan vere sikre på at deltakarane i studiane hadde identisk teknikk ved pre- og posttestane, er det mogleg at dette kan ha verka inn på resultatet. 
+
+Eit alternativ til frivekter, er dynamometer. Dynamometer er elektroniske apparat som måler kraft. Dynamometer har i over 40 år vorte sett på som gullstandarden for å måle maksimal styrke @Parraca2022. Trass dette, fann ein studie frå 2021 @Najiah2021 ein signifikant korrelasjon mellom resultat frå dynamometer og 1RM i knebøy. Ein fordel med dynamometer er likevel at ein kan isolere enkelte muskelgrupper i større grad enn ein kan med frivekter, noko som ville auka spesifisiteten til testane.
+
+I tillegg til å måle maksimal styrke, hadde fire av studiane [@Brigatto2019; @Ostrowski1997; @Schoenfeld2019; @Aube2020] også utfallsvariablar på muskelmasse. Alle desse fire studiane brukte ultralyd for å måle muskelmasse. Ein kan stilje spørsmål ved valet med å bruke ultralyd, ettersom MRI er rekna som gullstandarden for å måle endringar i muskelmasse @Stokes2021. På den andre sida fant ein studie publisert i 2021 @Stokes2021 at målingar av muskelmasse frå ultralyd var signifikant korrelert med målingar frå MRI. Trass dette, kan ein argumentere for at resultata kanskje ville vere noko meir pålitelege dersom MRI vart nytta istadenfor ultralyd. Ufordelen med MRI er at det er svært kostnads- og ressurskrevjande.
+
+## Statistiske testar
+
+Alle studiane brukte statistiske analyser for å kvantifisere endring i maksimal styrke og muskelmasse for kvar gruppe og mellom gruppene. Nokre av studiane hadde analyser for ytterlegare variablar, men eg har valgt å sjå vekk frå desse i denne rapporten ettersom det ikkje er relevant for mi problemstilling. Brigatto et al. @Brigatto2019 brukte ANOVA for å kvantifisere effekten av intervensjonen innad og mellom gruppene, medan Ostrowski et al. @Ostrowski1997 brukte MANOVA, Scheffe post hoc og Peason product moment correlations, Rhea et al. @Rhea2002 brukte ei variansanalyse og Turkey’s post hoc, Schoenfeld et al. @Schoenfeld2019 brukte ANCOVA og JZS Bayes Factor ANCOVA, medan Aube et al. @Aube2020 brukte éinvegs variansanalyse og ei blanda modellanalyse.
+
+ANOVA (analysis of variance), ANCOVA (analysis of covariance) og MANOVA (multivariate analysis of variance) er alle ei form for variansanalyse. ANOVA analyserer forskjellen i gjennomsnitt for éin utfallsvariabel mellom gruppene, medan MANOVA kan analysere forskjellen i gjennomsnitt mellom gruppene for fleire utfallsvariablar samstundes. ANCOVA gjer i utgangspunktet det same som ANOVA, men kontrollerer i tillegg for kovariat. Kovariat er uavhengige variablar som ikkje er av primær interesse, men som kan virke inn på den avhengige variabelen.
+
+Tre av studiane [@Ostrowski1997; @Rhea2002; @Aube2020] oppgav ikkje at dei gjennomførte styrkebereknig (power calculation). Styrkeberekning kan fortelje oss om studiane hadde eit stort nok utval for å unngå type I- og type II feil. For studiane som ikkje gjennomførte styrkeberekning kan vi difor ikkje seie noko om sannsynet for at resultata i studiane er falsk positiv (type I feil) eller falsk negativ (type II feil), noko som er ein svakheit med metoden. Schoenfeld et al. @Schoenfeld2019 gjennomførte ei styrkeberekning som tilsa at dei trengde 36 deltakarar. Som følgje av to fråfall, endte dei opp med kun 34 deltakarar, noko som kan ha svekka resultatet.
+
+## Tilrådingar for framtidige studiar
+
+Slik eg ser det, bør framtidige studiar følgje det same randomiserte, parallellegruppe-designet som dei fem studiane følgde, men med eit par justeringar. For det første bør ein blinde dei som testar testdeltakarane for å hindre bias. Vidare meiner eg at ein bør bruke dei mest anerkjende testbatteria ein har tilgang til. Slik eg ser det, bør ein bruke dynamometer framfor frivekter for å teste styrke, og MRI framfor ultralyd for å teste muskelmasse. Framtidige studiar bør også syta for å rettferdiggjere utvalsstorleiken ved å bruke styrkeberekning for å minimere risikoen for type I- og type II-feil. Det kan kanskje også vere fordelaktig å nytte lenger intervensjonsperiodar i framtida, til dømes 6 månadar, for å redusere risikoen for at tilfeldigheitar verkar inn på resultatet.

@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>IDR4000 Mappeeksamen - 2&nbsp; Reliabilitet og reproduserbar dataanalyse</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../kapittel/02-labrapport.html" rel="next">
+<link href="../index.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../kapittel/01-reliabilitet.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Reliabilitet og reproduserbar dataanalyse</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">IDR4000 Mappeeksamen</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapittel/01-reliabilitet.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Reliabilitet og reproduserbar dataanalyse</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapittel/02-labrapport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Labrapport: RNA-ekstraksjon og -analyse</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapittel/03-vitenskapsfilosofi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Vitskapsfilosofi</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapittel/04-studiedesign.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Studiedesign</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../kapittel/05-analyse-av-repeterte-forsøk.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Analyse av repeterte forsøk</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#metode" id="toc-metode" class="nav-link active" data-scroll-target="#metode"><span class="header-section-number">1</span> Metode</a>
+  <ul class="collapse">
+  <li><a href="#forberedelser" id="toc-forberedelser" class="nav-link" data-scroll-target="#forberedelser"><span class="header-section-number">1.1</span> Forberedelser</a></li>
+  <li><a href="#før-testingen" id="toc-før-testingen" class="nav-link" data-scroll-target="#før-testingen"><span class="header-section-number">1.2</span> Før testingen</a></li>
+  <li><a href="#maksimalt-oksygenopptak-vo2-maks-test" id="toc-maksimalt-oksygenopptak-vo2-maks-test" class="nav-link" data-scroll-target="#maksimalt-oksygenopptak-vo2-maks-test"><span class="header-section-number">1.3</span> Maksimalt oksygenopptak (VO2-maks) test</a></li>
+  <li><a href="#etter-testingen" id="toc-etter-testingen" class="nav-link" data-scroll-target="#etter-testingen"><span class="header-section-number">1.4</span> Etter testingen</a></li>
+  <li><a href="#databehandling" id="toc-databehandling" class="nav-link" data-scroll-target="#databehandling"><span class="header-section-number">1.5</span> Databehandling</a></li>
+  <li><a href="#statistiske-analyser" id="toc-statistiske-analyser" class="nav-link" data-scroll-target="#statistiske-analyser"><span class="header-section-number">1.6</span> Statistiske analyser</a></li>
+  </ul></li>
+  <li><a href="#resultater" id="toc-resultater" class="nav-link" data-scroll-target="#resultater"><span class="header-section-number">2</span> Resultater</a></li>
+  <li><a href="#metodisk-diskusjon" id="toc-metodisk-diskusjon" class="nav-link" data-scroll-target="#metodisk-diskusjon"><span class="header-section-number">3</span> Metodisk diskusjon</a></li>
+  <li><a href="#konklusjon" id="toc-konklusjon" class="nav-link" data-scroll-target="#konklusjon"><span class="header-section-number">4</span> Konklusjon</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Reliabilitet og reproduserbar dataanalyse</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Christian G. Jenssen, Marius Bjekeset, Oliver Bottolfs, Sivert Solheim </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="metode" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="metode"><span class="header-section-number">1</span> Metode</h2>
+<section id="forberedelser" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="forberedelser"><span class="header-section-number">1.1</span> Forberedelser</h3>
+<p>Forberedelser til utholdenhetstester involverte flere trinn. Først ble utstyret kalibrert. Dette inkluderte justering av temperatur og luftfuktighet ved hjelp av enhetens kontroller. For å gjøre dette, ble “Ambient Conditions” valgt, og temperaturen og luftfuktigheten ble sjekket på gradestokken. Eventuelle justeringer ble gjort ved å trykke “F1” for å endre luftfuktighet og temperatur, og deretter trykke “F12” for å lagre endringene.</p>
+<p>Videre ble volumkalibrering utført ved å sette inn “Trippel V” og koble til “Sample line”. En slange ble deretter festet fra Oxycon´s miksekammer´s bakside til volumkalibreringspumpen. “Volume Calibration” ble valgt, og kalibreringen ble startet ved å trykke “F1”. Spaken på pumpen ble beveget forsiktig frem og tilbake til grafene på skjermen flatet ut på omtrent 4 på y-aksen. Det ble pumpet frem til tallene ble vist i høyre margen. Deretter ble verdiene for oksygen (O2) og karbondioksid (CO2) sjekket. Kalibreringen ble ansett som vellykket hvis feilmarginen var innenfor 1,0 %, noe som tilsvarer et område mellom 99,0 og 101,0. Hvis kalibreringen ikke ble godkjent, ble den gjentatt ved å trykke “F9”. Hvis den ble godkjent, ble resultatene lagret ved å trykke “F12”. Gasskalibrering var neste steg. “GAS Calibration” ble valgt og “F1” ble trykket for å starte kalibreringen. Kalibreringen fortsatte til tallene viste seg i høyre marg. Igjen ble verdiene for oksygen (O2) og karbondioksid (CO2) sjekket. Kalibreringen ble ansett som godkjent hvis tallene var innenfor en feilmargin på 1,0, noe som tilsvarer et område mellom –1,0 og 1,0. Gassflasken ble deretter lukket i riktig retning, og hvis kalibreringen ikke var godkjent, kunne den gjentas ved å trykke “F9”. Hvis den var godkjent, ble resultatene lagret ved å trykke “F12”.</p>
+<p>Alle forberedelsene for testen ble grundig gjennomført før selve testingen startet. Først ble munnstykket satt sammen, og neseklypen ble funnet frem. Deretter ble forsøkspersonen veid uten sko og med så lite klær som mulig. Etter veiingen ble 300 g trukket fra vekten som følge av klærnes vekt. Forsøkspersonens data ble deretter lagt inn i systemet ved å trykke på “New Patient”. Her ble prosjektnavn, ID-nummer, fødselsdato, kjønn, høyde og vekt (hvor 300 g ble trukket fra) ført inn. Videre ble «Lode Device Manager 10» startet, og sykkelen ble nøye justert for forsøkspersonen. Dette inkluderte å bytte til riktig pedal og notere ned disse justeringene. Krankarmen ble stilt inn til 172,5. Kalibreringen av krankarmene ble utført, og vi stilte inn Lode-sykkelen til forsøkspersonens preferanser. På pre-testen ble disse innstillingene lagret.</p>
+<p>Sluttforberedelsene inkluderte å feste den ene enden av slangen til munnstykket og den andre enden til maskinen, med slangen teipet fast til sykkelen. Til slutt ble VO2-opptaket klargjort ved å trykke på “Mixing Chamber”. Det ble dobbeltsjekket at innstillingene viste “small mouthpiece” og “30 s delta time” i det oppgitte vinduet, og deretter ble klargjøringen fullført ved å trykke “ok”. Ved å trykke “F1” ble opptaket startet, og etter 15 s var maskinen klar for selve testen.</p>
+</section>
+<section id="før-testingen" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="før-testingen"><span class="header-section-number">1.2</span> Før testingen</h3>
+<p>Før testen startet, ble forsøkspersonene informert om testprosedyren. De ble instruert om å gjennomføre hele testen sittende, og det ble festet en teipbit på nesen deres for å sikre at neseklipsen ikke falt av. Forsøkspersonen tilpasset sykkelen og setestillingen med hjelp fra testlederen, og denne setestillingen ble notert for bruk på neste testdag. Temperaturen og luftfuktigheten i rommet ble også notert. Submaksimal utholdenhetstest Testprosedyren startet med en submaksimal utholdenhetstest der forsøkspersonene tråkket på 75 W for kvinner og 100 W for menn ved en tråkkfrekvens på 90 ± 5 RPM i 90 s. Forsøkspersonene ble informert om å ta på neseklype og munnstykke 30 s før målingene begynte. Oksygenopptaket ble deretter målt hvert 30. sekund fra 2 til 4 min. 20 s før de 4 minuttene var ferdige, ble forsøkspersonene bedt om å vurdere sin opplevde anstrengelse på Borgs skala. Etter 4 min økte motstanden til 125 W for kvinner og 150 W for menn, og neseklypen og munnstykket ble tatt av/ut. Forsøkspersonene informerte om hvor de lå på Borgs skala, og denne prosessen ble gjentatt på neste trinn. Forsøkspersonene fikk deretter en 2 min aktiv pause på 50 W og ble bedt om å forbli sittende på sykkelen gjennom hele den aktive pausen.</p>
+</section>
+<section id="maksimalt-oksygenopptak-vo2-maks-test" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="maksimalt-oksygenopptak-vo2-maks-test"><span class="header-section-number">1.3</span> Maksimalt oksygenopptak (VO2-maks) test</h3>
+<p>Etter submaksimal utholdenhetstest fulgte VO2-maks testing, som startet på 150 W og økte med 25 W hvert min til utmattelse. Utmattelse ble definert som når forsøkspersonene ikke lenger klarte å opprettholde en tråkkfrekvens på &gt; 60 RPM. Det var fri tråkkfrekvens på begge testdagene, og forsøkspersonene hadde neseklype og munnstykke gjennom hele testen. Klokken ble nullstilt etter en 5 minutters pause når opptaket viste et helt minutt pluss 1 sekund. Forsøkspersonene fikk beskjed om å sykle til utmattelse (dvs. RPM &lt; 60), og verbal kommunikasjon ble benyttet for å informere dem underveis. Watt-maks og sekundene siden siste økning ble notert, og forsøkspersonene ble spurt om deres opplevde anstrengelsesnivå på Borgs RPE-skala umiddelbart etter fullført test. Etter testen forlot ikke forsøkspersonene sykkelen, og opptaket ble lagret ved å trykke “F1”, etterfulgt av “F12” for å lagre opptaket. All data fra de to høyeste målingene ble notert. Maximum accumulated oxygen uptake (MAOD) test Etter VO2-maks testing, gjennomførte forsøkspersonene en Maximum Accumulated Oxygen Uptake (MAOD) test. De syklet på 50 W for menn og kvinner i fem min før MAOD-testen startet. MAOD-testen involverte at forsøkspersonene syklet så lenge de kunne ved den høyeste effekten (W) de oppnådde i minst 30 s under VO2-maks testing. De ble instruert om å opprettholde samme tråkkfrekvens som under den submaksimale testen. Testlederen ga verbal oppmuntring når forsøkspersonene viste tegn til utmattelse. Testen ble avsluttet når forsøkspersonene ikke lenger kunne opprettholde en tråkkfrekvens på &gt; 60 RPM. Forsøkspersonene ble spurt om deres opplevde anstrengelsesnivå på Borgs skala umiddelbart etter avsluttet test.</p>
+</section>
+<section id="etter-testingen" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="etter-testingen"><span class="header-section-number">1.4</span> Etter testingen</h3>
+<p>Etter testingen ble alt utstyr desinfisert og ryddet opp. Eventuelle endringer i sykkelinnstillinger ble også notert. Til slutt ble dataene notert ned ved å gå inn på skjermrapporten “Hil_MIX_30.” Tiltak for å sikre reliabilitet For å sikre reliabilitet ble det gjennomført en rekke tiltak under testprosedyren. Testene ble gjennomført på nøyaktig samme måte hver gang, med standardisering av alle faktorer, til det beste av vår kunnskap, som kunne påvirke resultatene. Testene ble utført til samme tidspunkt på døgnet. Videre ble det lagt vekt på å opprettholde tilnærmet lik luftfuktighet og temperatur i testrommet, med nøye notering av disse forholdene. Da det gjaldt kalibrering av utstyret, ble det benyttet samme utstyr på begge testdagene. Det ble også påsett at de samme vektskivene ble brukt på både testdag 1 og testdag 2. For å sikre nøyaktige data av kroppsvekt, veide forsøkspersonene seg med så lite klær som mulig, uten sko, og det ble trukket fra 300 g fra vekten som følge av klær. Dette ble gjentatt eksakt likt på begge testdagene. Under testingen ble hele prosedyren gjennomført sittende. Det var også viktig å ha kontinuitet med hensyn til testledere og observatører, så de samme personene ble benyttet på begge testdagene. Videre ble forsøkspersonene instruert til å ha to dagers restitusjonstid mellom testdag 1 og testdag 2 for å minimere eventuelle påvirkninger fra tidligere testing. Testlederne opplyste ikke om VO2-maks nivået under selve testen, og den samme testlederen ble brukt på begge testdagene. Testlederne fulgte protokollen på samme måte, og det ble lagt vekt på å gi tilnærmet lik tilbakemelding og engasjement. Under VO2maks-testen ble tilbakemeldingen gradvis økt utover testen for å motivere forsøkspersonene til sitt ytterste. Det ble også notert hvor mye og når forsøkspersonene hadde spist før testdag 1, og dette ble gjentatt på testdag 2. Spesielt var det viktig å sikre inntak av energirik mat og drikke. Dette er en rekke viktige tiltak for å sikre høy reliabilitet i fysiologisk testing <span class="citation" data-cites="Halperin2015">(<a href="#ref-Halperin2015" role="doc-biblioref">1</a>)</span>. Forsøkspersonene fikk klare retningslinjer, inkludert å avstå fra hard fysisk trening de siste 48 timene før testing, opprettholde tilnærmet lik fysisk aktivitet og døgnrytme de siste 48 timene før de to testdagene. I tillegg ble de instruert om å unngå inntak av nikotin og/eller alkohol de siste 48 timene før testing. Inntak av koffein på testdagene ble også regulert for å sikre lik mengde. Forsøkspersonene ble instruert om å ha samme type og mengde mat og drikke samme dag som testen, med siste måltid minst 2 timer før testing. Det var også krav om å bruke samme klær og sko på begge testdagene for å minimere variabler som kunne påvirke resultatene. Disse tiltakene ble nøye implementert for å sikre pålitelige og sammenlignbare resultater mellom de to testdagene.</p>
+</section>
+<section id="databehandling" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="databehandling"><span class="header-section-number">1.5</span> Databehandling</h3>
+<p>VO2maks (ml/min) ble regnet ut ved å finne gjennomsnittet av målingene de to siste hele halvminuttene under VO2maks-testen. Maksimalt akkumulert oksygenunderskudd (MAOD) ble regnet ut med data fra både den submaksimale testen og MAOD-testen ved hjelp av en formel hentet fra boken Physiological Tests for Elite Athletes 2nd Edition <span class="citation" data-cites="Humankinetics2012">(<a href="#ref-Humankinetics2012" role="doc-biblioref">2</a>)</span>.</p>
+</section>
+<section id="statistiske-analyser" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="statistiske-analyser"><span class="header-section-number">1.6</span> Statistiske analyser</h3>
+<p>Før vi utførte statistiske analyser, ble datasettet rengjort for eventuelle feilregistreringer eller manglende data. Statistiske analyser ble utført i programvaren RStudio <span class="citation" data-cites="RStudio">(<a href="#ref-RStudio" role="doc-biblioref">3</a>)</span>, og ble organisert i Microsoft Excel <span class="citation" data-cites="Excel">(<a href="#ref-Excel" role="doc-biblioref">4</a>)</span>. Deskriptiv statistikk er presentert som gjennomsnitt, standardavvik og minimums- og maksimumsverdi. Basert på anbefalingene fra <span class="citation" data-cites="Hopkins2000">(<a href="#ref-Hopkins2000" role="doc-biblioref">5</a>)</span> benyttet vi variasjonskoeffisient (CV %) for å undersøke test-retest reliabiliteten til følgende tester: VO2-maks, Wmaks og MAOD.a. Dårlig reliabilitet ble ansett som CV &gt; 10 %, akseptabel reliabilitet ble ansett som CV = 5–10 % og god reliabilitet ble ansett som CV &lt; 5 % <span class="citation" data-cites="Cronin2004 Taylor2010">(<a href="#ref-Cronin2004" role="doc-biblioref">6</a>,<a href="#ref-Taylor2010" role="doc-biblioref">7</a>)</span>. Variasjonskoeffisienten (standardavvik delt på gjennomsnittet) brukes ofte som et mål på presisjon og reproduserbarhet av data innen kvantitativ vitenskap <span class="citation" data-cites="Plabon2020 Tian2005">(<a href="#ref-Plabon2020" role="doc-biblioref">8</a>,<a href="#ref-Tian2005" role="doc-biblioref">9</a>)</span>. For å videre undersøke om testene var reliable nok til å observere betydningsfulle forskjeller anvendte vi minste betydningsfulle forskjell (SWC). Beregningen av SWC ble gjort i henhold til <span class="citation" data-cites="Hopkins2009">(<a href="#ref-Hopkins2009" role="doc-biblioref">10</a>)</span>. Når CV % ≤ SWC, ble testen ansett i stand til å oppdage betydningsfulle forskjeller <span class="citation" data-cites="Hopkins2004">(<a href="#ref-Hopkins2004" role="doc-biblioref">11</a>)</span>.</p>
+</section>
+</section>
+<section id="resultater" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="resultater"><span class="header-section-number">2</span> Resultater</h2>
+<p>Deskriptiv statistikk av forsøkspersonenes VO2-maks, Wmaks og MAOD.a ved T1 og T2 er presentert i <a href="#tbl-gruppeegenskaper">Tabell&nbsp;<span>2.1</span></a>. I tillegg er en boksplott, som viser test-retest reliabiliteten til VO2-maks, Wmaks og MAOD.a, illustrert i <a href="#fig-vomax">Figur&nbsp;<span>2.1</span></a>. <a href="#fig-vomaxdelta">Figur&nbsp;<span>2.2</span></a> viser individuelle for hver forsøksperson for T1 og T2. <a href="#tbl-cvstd">Tabell&nbsp;<span>2.2</span></a> viser CV og standardavvik for hver av de tre utfallsvariablene for hver forsøksperson. Det ble funnet god test-retest reliabilitet for VO2-maks og Wmaks (CV = 1,84 og 4,77, henholdsvis), samt akseptabel test-retest reliabilitet for MAOD.a testen (CV = 6,77)(se <a href="#tbl-mcvmsd">Tabell&nbsp;<span>2.3</span></a>). Videre ble det observert at VO2-maks testen var reliabel nok til å oppdage betydningsfulle forskjeller i VO2-maks (SWC = 3,67). På tross av å ha vist henholdsvis god og akseptabel test-restest reliabilitet, ble det funnet at Wmaks og MAOD.a testen ikke var reliable nok til å observere betydningsfulle forskjeller i Wmaks og MAOD.a (SWC = 4,04 og 0,88, henholdsvis).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-vomax" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="01-reliabilitet_files/figure-html/fig-vomax-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figur&nbsp;1: Boxplot av VO2max ved T1 og T2</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-vomaxdelta" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="01-reliabilitet_files/figure-html/fig-vomaxdelta-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figur&nbsp;2: VO2max målinger fra ved T1 vs.&nbsp;T2</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="tbl-gruppeegenskaper" class="anchored">
+<table class="table table-sm table-striped small">
+<caption>Tabell&nbsp;1: Gjennomsitt, standardavvik, median og de høyeste og laveste målingene til testgruppa</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variabel</th>
+<th style="text-align: right;">Gjennomsnitt</th>
+<th style="text-align: right;">Standardavvik</th>
+<th style="text-align: right;">Median</th>
+<th style="text-align: right;">Minimum</th>
+<th style="text-align: right;">Maksimum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Alder</td>
+<td style="text-align: right;">24.14</td>
+<td style="text-align: right;">2.18</td>
+<td style="text-align: right;">24.00</td>
+<td style="text-align: right;">22.00</td>
+<td style="text-align: right;">29.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bodyheight</td>
+<td style="text-align: right;">179.43</td>
+<td style="text-align: right;">4.60</td>
+<td style="text-align: right;">176.00</td>
+<td style="text-align: right;">175.00</td>
+<td style="text-align: right;">187.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Vekt</td>
+<td style="text-align: right;">77.64</td>
+<td style="text-align: right;">7.97</td>
+<td style="text-align: right;">79.20</td>
+<td style="text-align: right;">60.60</td>
+<td style="text-align: right;">88.90</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Vo2max</td>
+<td style="text-align: right;">4729.43</td>
+<td style="text-align: right;">1071.11</td>
+<td style="text-align: right;">5072.00</td>
+<td style="text-align: right;">2787.00</td>
+<td style="text-align: right;">6266.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">w.max</td>
+<td style="text-align: right;">421.43</td>
+<td style="text-align: right;">82.54</td>
+<td style="text-align: right;">437.50</td>
+<td style="text-align: right;">275.00</td>
+<td style="text-align: right;">525.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MAOD.a</td>
+<td style="text-align: right;">69.34</td>
+<td style="text-align: right;">17.43</td>
+<td style="text-align: right;">77.88</td>
+<td style="text-align: right;">43.21</td>
+<td style="text-align: right;">92.41</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="tbl-cvstd" class="anchored">
+<table class="table table-sm table-striped small">
+<caption>Tabell&nbsp;2: CV og standardavvik for hver av de tre utfallsvariablene for hver forsøksperson</caption>
+<colgroup>
+<col style="width: 4%">
+<col style="width: 13%">
+<col style="width: 11%">
+<col style="width: 12%">
+<col style="width: 20%">
+<col style="width: 18%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">id</th>
+<th style="text-align: right;">cv_vo2max</th>
+<th style="text-align: right;">cv_wmax</th>
+<th style="text-align: right;">cv_maoda</th>
+<th style="text-align: right;">std_dev_vo2max</th>
+<th style="text-align: right;">std_dev_wmax</th>
+<th style="text-align: right;">std_dev_MAODa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3.15</td>
+<td style="text-align: right;">10.88</td>
+<td style="text-align: right;">3.41</td>
+<td style="text-align: right;">34.79</td>
+<td style="text-align: right;">10.61</td>
+<td style="text-align: right;">0.55</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.03</td>
+<td style="text-align: right;">6.15</td>
+<td style="text-align: right;">4.51</td>
+<td style="text-align: right;">0.14</td>
+<td style="text-align: right;">3.54</td>
+<td style="text-align: right;">0.73</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4.50</td>
+<td style="text-align: right;">4.88</td>
+<td style="text-align: right;">2.32</td>
+<td style="text-align: right;">35.78</td>
+<td style="text-align: right;">3.54</td>
+<td style="text-align: right;">0.22</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2.13</td>
+<td style="text-align: right;">11.47</td>
+<td style="text-align: right;">7.68</td>
+<td style="text-align: right;">21.64</td>
+<td style="text-align: right;">10.61</td>
+<td style="text-align: right;">1.26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2.43</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">4.47</td>
+<td style="text-align: right;">29.98</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.80</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0.56</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">2.22</td>
+<td style="text-align: right;">4.95</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.23</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0.11</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">22.68</td>
+<td style="text-align: right;">1.13</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">2.33</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="tbl-mcvmsd" class="anchored">
+<table class="table table-sm table-striped small">
+<caption>Tabell&nbsp;3: Mean Coefficient of Variation og Mean Standard Deviation for hver av de tre utfallsvariablene</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: right;">Mean Coef. of Variation (0.2)</th>
+<th style="text-align: right;">Mean Std. Deviation (0.2)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">VO2max</td>
+<td style="text-align: right;">1.84</td>
+<td style="text-align: right;">18.34</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">W.max</td>
+<td style="text-align: right;">4.77</td>
+<td style="text-align: right;">4.04</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MAOD.a</td>
+<td style="text-align: right;">6.76</td>
+<td style="text-align: right;">0.88</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="metodisk-diskusjon" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="metodisk-diskusjon"><span class="header-section-number">3</span> Metodisk diskusjon</h2>
+<p>Noen aspekter ved metoden kan i retrospekt ha vært suboptimale, og følgelig ha påvirket resultatene i en negativ retning. Under den submaksimale testen ble testdeltakerne bedt om å sykle på den samme tråkkfekvensen som de ville sykle på under MAOD-testen. Ettersom belastningen under den submaksimale testen er mye lavere enn under MAOD-testen, kan tråkkfrekvensen oppleves kunstig høy under den submaksimale testen, og følgelig føre til en dårlig arbeidsøkonomi. For å fjerne feilkilden, kunne man ha individualisert hvilken watt den enkelte testdeltaker syklet på under de submaksimale dragene, slik at oksygenopptaket blir representativt for den gitte motstanden. Mengden verbal tilbakemelding fra testleder til forsøksperson under VO2-maks- og MAOD-testen kunne variere mellom T1 og T2. Dette kan skyldes at testlederne var noe tilbakeholdne på T1, og ble mer selvsikre på T2. Dette kan tenkes å ha påvirket testdeltakerne sin innsats i varierende grad mellom T1 og T2. Flere av testdeltakerne hadde Wmaks som varierte mye mellom første og andre testdag. Det regjerer således tvil om LODE-sykkelen som ble benyttet under testingen samsvarte med den motstanden vi stilte den inn på. Dette kan ha påvirket testresultatene.</p>
+</section>
+<section id="konklusjon" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="konklusjon"><span class="header-section-number">4</span> Konklusjon</h2>
+<p>For å konkludere, viste testene varierende reliabilitet. Noen av testene viste svært god reliabilitet for noen av forsøkspersonene, og dårlig reliabilitet for andre. Vi konkluderte med at dette hovedsakelig skyldtes at Lode-sykkelen hadde varierende motstand på en gitt watt. På grunn av disse begrensningene, kan vi ikke være sikre på at en ny test ville gi de samme resultatene som testene utført her. Fremtidige studier bør se til at sykkelen har konsekvent motstand, individuelt tilpasse watten på de submaksimale dragene og standardisere verbal tilbakemelding.</p>
+
+
+<div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-Halperin2015" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Halperin I, Pyne DB, Martin DT. Threats to internal validity in exercise science: A review of overlooked confounding variables. International Journal of Sports Physiology and Performance [Internet]. 2015 Oct;10(7):823–9. Available from: <a href="https://doi.org/10.1123/ijspp.2014-0566">https://doi.org/10.1123/ijspp.2014-0566</a></div>
+</div>
+<div id="ref-Humankinetics2012" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Tanner R, Gore C. Physiological tests for elite athletes. Human Kinetics; 2012. </div>
+</div>
+<div id="ref-RStudio" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Posit team. RStudio: Integrated development environment for r [Internet]. Boston, MA: Posit Software, PBC; 2023. Available from: <a href="http://www.posit.co/">http://www.posit.co/</a></div>
+</div>
+<div id="ref-Excel" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Microsoft. Microsoft excel [Internet]. 2023. Available from: <a href="https://www.microsoft.com/nb-no/microsoft-365/p/excel/cfq7ttc0hr4r?activetab=pivot:oversikttab">https://www.microsoft.com/nb-no/microsoft-365/p/excel/cfq7ttc0hr4r?activetab=pivot:oversikttab</a></div>
+</div>
+<div id="ref-Hopkins2000" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Hopkins WG. Measures of reliability in sports medicine and science. Sports Medicine [Internet]. 2000;30(1):1–15. Available from: <a href="https://doi.org/10.2165/00007256-200030010-00001">https://doi.org/10.2165/00007256-200030010-00001</a></div>
+</div>
+<div id="ref-Cronin2004" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Cronin JB, Hing RD, McNair PJ. Reliability and validity of a linear position transducer for measuring jump performance. The Journal of Strength and Conditioning Research [Internet]. 2004;18(3):590. Available from: <a href="https://doi.org/10.1519/1533-4287(2004)18<590:ravoal>2.0.co;2">https://doi.org/10.1519/1533-4287(2004)18&lt;590:ravoal&gt;2.0.co;2</a></div>
+</div>
+<div id="ref-Taylor2010" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Taylor KL, Cronin J, Gill ND, Chapman DW, Sheppard J. Sources of variability in iso-inertial jump assessments. International Journal of Sports Physiology and Performance [Internet]. 2010 Dec;5(4):546–58. Available from: <a href="https://doi.org/10.1123/ijspp.5.4.546">https://doi.org/10.1123/ijspp.5.4.546</a></div>
+</div>
+<div id="ref-Plabon2020" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Pélabon C, Hilde CH, Einum S, Gamelon M. On the use of the coefficient of variation to quantify and compare trait variation. Evolution Letters [Internet]. 2020 Jun;4(3):180–8. Available from: <a href="https://doi.org/10.1002/evl3.171">https://doi.org/10.1002/evl3.171</a></div>
+</div>
+<div id="ref-Tian2005" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Tian L. Inferences on the common coefficient of variation. Statistics in Medicine [Internet]. 2005;24(14):2213–20. Available from: <a href="https://doi.org/10.1002/sim.2088">https://doi.org/10.1002/sim.2088</a></div>
+</div>
+<div id="ref-Hopkins2009" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Hopkins WG, Marshall SW, Batterham AM, Hanin J. Progressive statistics for studies in sports medicine and exercise science. Medicine And Science in Sports And Exercise [Internet]. 2009 Jan;41(1):3–12. Available from: <a href="https://doi.org/10.1249/mss.0b013e31818cb278">https://doi.org/10.1249/mss.0b013e31818cb278</a></div>
+</div>
+<div id="ref-Hopkins2004" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Hopkins WG. How to interpret changes in an athletic performance test. <a href="https://www.sportsci.org/jour/04/wghtests.htm" class="uri">https://www.sportsci.org/jour/04/wghtests.htm</a>; 2004. </div>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index.html</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../kapittel/02-labrapport.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Labrapport: RNA-ekstraksjon og -analyse</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

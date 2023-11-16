@@ -1,0 +1,379 @@
+---
+title: "Analyse av repeterte forsøk"
+author: Sivert Solheim
+bibliography: references.bib
+crossref:
+  tbl-prefix: Tabell
+  tbl-title: Tabell
+  fig-prefix: Figur
+  fig-title: Figur
+---
+
+## Introduksjon
+
+Variablar som treningsvolum, intensitet, type øvingar, TUT (time under tension) og pause mellom sett påverkar effekten av styrketrening [@Ratamess2009]. Det optimale volumet styrketrening for a maksimere vekst i muskelmasse, også kalla hypertrofi, har lenge vore eit omstridt tema innan forsking. Ein systematisk oversikt frå 2019 @Krzysztofik2019 konkluderte med at det på det tidspunktet var manglande bevis for å kome med anbefalingar om kva treningsvolum før gir størst grad hypertrofi. I 2022 konkluderte derimot ein ny systematisk oversikt @BazValle2022 at ein plass mellom 12 og 20 sett per veke er optimalt for hypertrofi. Denne artikkelen vil analysere effekten av ulike treningsvolum på muskelmasse ved hjelp av eit datasett frå ein tidlegare studie [@Hammarstrm2020].
+
+## Metode
+
+### Deltakarar og studieoverblikk
+
+I denne studien blei førti-ein menn og kvinner rekruttert som deltakarar. For å kvalifisere seg måtte dei vere ikkje-røykarar og vere mellom 18 og 40 år gamle. Deltakarar som ikkje tålte lokalbedøving, hadde trent styrke meir enn ein gong i veka det siste året før studien, hadde nedsett muskelstyrke grunna skader, eller tok reseptbelagd medisin som kunne verke inn på treningseffekten, vart ekskludert. Sju deltakarar vart fjerna frå studien fordi dei ikkje fullførte minst 85% av dei planlagde treningsøktene. Dette skjedde av ulike grunnar, som ubehag eller smerte under trening (n = 5), skader som ikkje var knytte til studien (n = 1), eller manglande overhald av protokollen (n = 1). Ved starten av studien var det ingen forskjellar i maksimal viljestyrt muskelsamantrekking (MVC) etter at det var korrigert for kroppsvekt eller antropometri mellom dei inkluderte og ekskluderte i studien (sjå @tbl-participantcharacteristics). Alle dei som blei inkludert i studien hadde tidlegare treningsbakgrunn innan lagsport, langrenn og gymnastikk. Av desse rapporterte tjue deltakarar at dei trena regelmessig på tidspunktet dei vart med i studien og ti av dei trena styrke av og til, men ikkje oftare enn ein gong i veka.
+Intervensjonen i studien var eit treningsprogram for heile kroppen som gjekk over 12 veker. For å kunne måle ulikheiter mellom ulike treningsvolum for kvar deltakar, vart beinøvingar gjennomført unilateralt med ulikt volum for kvart bein. Kroppssamansetjing vart målt før og etter intervensjonen. I tillegg loggførte også deltakarane kva og kor mykje dei åt frå veke 6 og ut intervensjonen.
+
+```{r}
+#| label: tbl-participantcharacteristics
+#| tbl-cap: "Deltakarkarakteristiska"
+#| echo: false
+#| warning: false
+#| message: false
+
+library(tidyverse); library(exscidata)
+library(lme4)
+library(devtools)
+library(gt)
+
+install_github("dhammarstrom/exscidata")
+
+
+dxadata %>%
+select(participant, time, sex, include:weight, fat.whole) %>%
+mutate(fat.whole = ((fat.whole / 1000) / weight) * 100) %>%
+filter(time == "pre") %>%
+group_by(sex, include) %>%
+mutate(n = n()) %>%
+
+pivot_longer(names_to =  "variable", 
+             values_to = "value", 
+             cols = age:n) %>%
+group_by(sex, include, variable) %>%
+summarise(m = mean(value), 
+          s = sd(value)) %>%
+ungroup() %>%
+mutate(m = signif(m, digits = 3), 
+       s = signif(s, digits = 2), 
+       ms = if_else(variable == "n", as.character(m), paste0(m, " (", s, ")")), 
+       sex_incl = paste(sex, include, sep = "_")) %>%
+dplyr::select(-m, -s, - sex, -include) %>%
+
+pivot_wider(names_from = sex_incl, 
+            values_from = ms) %>%
+select(variable, female_incl, female_excl, male_incl, male_excl) %>%
+mutate(variable = factor(variable, levels = c("n", "age", "weight", "height", "fat.whole"), 
+                         labels = c("N", "Alder (År)", "Masse (kg)", 
+                                    "Kroppslengd (cm)", "Feittprosent (%)"))) %>%
+arrange(variable) %>%
+
+gt() %>%
+tab_footnote(footnote = "Verdiar er oppgitt i gjennomsnitt og (SD)") %>%
+tab_spanner(label = "Kvinner", columns = c("female_incl", "female_excl")) %>%
+tab_spanner(label = "Menn", columns = c("male_incl", "male_excl")) %>%
+cols_label(variable = " ", 
+           female_incl = "Inkludert", 
+           female_excl = "Ekskludert", 
+           male_incl = "Inkludert", 
+           male_excl = "Ekskludert")
+  
+           
+```
+
+### Styrketreningsprotokoll
+
+Deltakarane gjennomførte eit standardisert oppvarmingsprogram før kvar styrketreningsøkt. Denne oppvarminga bestod av fem minutt sykling, ti repetisjonar armhevingar, situps, rygghev og knebøy, og ti repetisjonar for kvar av øvingane i treningsprogrammet (ca. 50% av 1RM). Øvingar for bein var gjennomført i følgjande rekkefølgje: unilateral beinpress, lårcurl, og beinstrekk, der deltakarane gjorde eitt sett  på eine beinet (singelsett) og tre sett på det andre (multisett) for kvar øving. Singelsett vart utført mellom det andre og tredje settet i multisett protokollen. Deretter gjennomførte deltakarane to sett av kvar av øvingane benkpress og nedtrekk, i tillegg til at dei bytta mellom skulderpress og sitjande roing for kvar treningsøkt. Deltakarane hadde pausar på 90-180 sekund mellom kvart sett. Treningsintensiteten auka gradvis gjennom intervensjonen, med 10RM i dei første to vekene, deretter 8RM i tre veker og 7RM i dei siste sju vekene. For å tilpasse treningsintervensjonen til kvar av deltakarane sine personlege timeplanar, vart nokre av treningsøktene gjennomført utan tilsyn. Gjennomsnittleg tal treningsøkter utan tilsyn for kvar deltakar var 91% av gjennomførte treningsøkter. For å kunne dokumentere treningsøkter utan tilsyn, var deltakarane instruert i å føre detaljerte treningsloggar. Treningsloggane var kontinuerleg sjekka av forskingsgruppa saman med deltakarane for å sikre progresjon og at deltakarane følgde protokollen. Frå og med den niande treningsøkta, var éi av treningsøktene i veka utført med ein redusert intensitet som svara til 90% av den førre treningsøkta, men med same tal repetisjonar. Treningsøkter med maksimal innsats vart gjennomført med minst 48 timar mellom, medan økter med submaksimal innsats (90%) var separert frå andre treningsøkter med minst 24 timar. For å betre umiddelbar restitusjon, vart deltakarane gjeve ei drikke som innehaldt 0,15g/kg kroppsvekt protein, 11,2g/kg kroppsvekt karbohydrat og 0,5g/kg kroppsvekt feitt.
+
+### Evaluering av muskelmasse
+
+Muskelmasse vart evaluert før og etter intervensjonen ved bruk av DXA (dual-energy X-ray absorptiometry) (Lunar Prodigy, GE Healthcare, Oslo, Norway). Deltakarane var bedt om å vere fastande i to timar, og å unngå intens fysisk aktivitet i 48 timar før DXA-målingane. DXA-målingane etter intervensjonen vart gjennomført to dagar etter den siste treningsøkta.
+
+### Dataanalyse og statistiske testar
+
+Dataanalyser vart utført i RStudio [@RStudio] med programmeringsspråket R [@R]. 
+Ein para t-test og lineær regresjonsmodell vart gjennomført for å analysere skilnaden mellom effekten av dei to treningsvoluma.
+
+
+```{r}
+#| label: "Load packages and data"
+#| warning: false
+#| message: false
+#| echo: false
+#| include: false
+
+
+
+library(tidyverse); library(exscidata)
+library(lme4)
+library(devtools)
+
+install_github("dhammarstrom/exscidata")
+
+
+## Import data set, extract leg lean mass per leg and remove observations
+# that are include == "excl".
+
+leanmass <- dxadata %>%
+  select(participant:include, lean.left_leg, lean.right_leg) %>%
+  pivot_longer(names_to = "leg", 
+               values_to = "lean.mass", 
+               cols = lean.left_leg:lean.right_leg) %>%
+  mutate(leg = if_else(leg == "lean.left_leg", "L", "R"), 
+         sets = if_else(multiple == leg, "multiple", "single")) %>%
+  select(participant, time, sex, include, sets, leg, lean.mass) %>%
+  filter(include == "incl") %>%
+  
+  ## Change levels for time and sets
+  mutate(time = factor(time, levels = c("pre", "post")), 
+         sets = factor(sets, levels = c("single", "multiple")), 
+         leg = paste0(participant, leg))
+
+# Create a wide data set of change scores per volume condition
+# suitable for a t-test
+leanmass_change_wide <- leanmass %>%
+  pivot_wider(names_from = time, values_from = lean.mass) %>%
+  mutate(change = post - pre) %>%
+  
+  select(participant, sex, sets, change) %>%
+  pivot_wider(names_from = sets, 
+              values_from = change) %>%
+  
+  mutate(diff = multiple - single)
+
+
+leanmass_change_wide_time <- leanmass %>%
+  pivot_wider(names_from = time, values_from = lean.mass) %>%
+
+  select(participant, sex, sets, pre, post)
+
+
+
+
+## Do a t-test on change scores per condition. 
+
+## Alternatives (paired, equal variation)
+tt1 <- with(leanmass_change_wide, t.test(multiple, single, paired = TRUE))
+
+summary(tt1)
+
+
+## The same model but with lm
+m1 <- lm(diff ~ 1, data = leanmass_change_wide)
+
+summary(m1)
+
+
+## Mean change scores for both volumes
+# Single
+avgleanmass_change_single_notround <- with(leanmass_change_wide, mean(single))
+
+avgleanmass_change_single <- round(avgleanmass_change_single_notround)
+
+print(avgleanmass_change_single)
+
+
+# Multiple
+avgleanmass_change_multiple_notround <- with(leanmass_change_wide, mean(multiple))
+
+avgleanmass_change_multiple <- round(avgleanmass_change_multiple_notround)
+
+print(avgleanmass_change_multiple)
+
+
+## Percent increase in leanmass for single and mutliple set
+# Single
+percentincrease_single_notround <- mean(leanmass_change_wide$single / leanmass_change_wide_time$pre) * 100
+
+percentincrease_single <- round(percentincrease_single_notround, digits = 1)
+
+print(percentincrease_single)
+
+# Multiple
+percentincrease_multiple_notround <- mean(leanmass_change_wide$multiple / leanmass_change_wide_time$pre) * 100
+
+percentincrease_multiple <- round(percentincrease_multiple_notround, digits = 1)
+
+print(percentincrease_multiple)
+
+## Percent difference between volumes
+percentdifference <- percentincrease_multiple / percentincrease_single * 100 - 100
+
+print(percentdifference)
+
+## A plot for the change
+
+leanmass_change_plot <-leanmass %>%
+  ggplot(aes(time, 
+             lean.mass, 
+             group = paste(sets), 
+             color = sets)) + 
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Tid (pre/post)",
+       y = "Muskelmasse(g)")
+  
+
+
+### Mixed effects model
+# A mixed effects model allowing for a random slope for time is very similar 
+# to the t-test used above. 
+
+m2 <- lmer(lean.mass ~ time * sets +( 1 + time |participant), 
+           data = leanmass)
+
+# Check the summary 
+summary(m2)
+# Check assumptions of equal residual variance
+plot(m2)
+
+## Mixed-Effects ANCOVA
+
+# The lm model does not contain information on multiple
+# observations per participant
+m3 <- lm(post ~ pre + sets, data = leanmass_change_wide_time)
+
+
+# A more correct model also include random intercepts per 
+# participant. Mixed effects ANCOVA mnodel:
+m4 <- lmer(post ~ pre + sets + (1|participant), 
+           data = leanmass_change_wide_time)
+
+
+summary(m3)
+
+summary(m4)
+
+
+
+### How to extract data from a model:
+
+# m1 is a linear model of difference in differences
+# we can use it for inference, extract average diff and confidence 
+# intervals and p-value
+
+# Save all elements of inline results
+m1pval <- round(coef(summary(m1))[1, 4], 3)
+m1est <- round(coef(summary(m1))[1, 1], 1)
+
+m1ciu <- round(confint(m1)[1,2], 1)
+m1cil <- round(confint(m1)[1,1], 1)
+
+# Combine into an object
+m1results <- paste0(m1est,
+                    "g",
+                    " (95% CI: [",
+                    m1cil, 
+                    ", ",
+                    m1ciu, 
+                    "], p = ",
+                    m1pval,
+                    ")"
+                    )
+
+
+
+
+```
+
+## Resultat
+
+Endring i muskelmasse for singlesett vs multisett er visualisert i @fig-deltamuskelmasse. Muskelmasse auka i gjennomsnitt med `r avgleanmass_change_single`g (`r percentincrease_single`%) for singelsett og `r avgleanmass_change_multiple`g (`r percentincrease_multiple`%) for multisett. Dette gav ein skilnad i auke på `r m1results` mellom treningsvolum, noko som tilsvara ein `r percentdifference`% større auke i muskelmasse for multisett samanlikna med singelsett.
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+#| label: fig-deltamuskelmasse
+#| fig-cap: Gjennomsnittleg endring i muskelmasse for singelsett vs multisett
+
+print(leanmass_change_plot)
+```
+
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+#| output: false
+#| include: false
+
+## Time points in strength data set
+
+strengthvolume %>%
+  distinct(exercise)
+
+
+
+## Exploratory plot of strength data 
+
+str <- strengthvolume %>%
+  filter(include == "incl") %>%
+  mutate(time = factor(time, levels = c("pre", "session1", 
+                                        "week2", "week5", 
+                                        "week9", "post"))) %>%
+  print()
+
+
+str %>%
+  ggplot(aes(time, 
+             load, 
+             group = paste(participant, sets), 
+             color = sets)) + 
+  geom_line() + 
+  facet_wrap(~ exercise, scales = "free")
+  
+
+## How many measurements per participant
+
+str %>%
+  filter(!is.na(load)) %>%
+  group_by(participant, exercise, sets) %>%
+  summarise(n = n() ) %>%
+  ggplot(aes(n, participant, color = sets)) +
+  geom_point() + 
+  facet_wrap(~ exercise) + 
+  theme(axis.text.y = element_blank())
+
+
+
+## Use pre and post data 
+# Combine pre data prior to data analysis
+# per exercise, leg, participant, and sets
+
+str %>%
+  mutate(time = if_else(time %in% c("pre", "session1"), "pre", time)) %>%
+  
+  filter(time %in% c("pre", "post")) %>%
+  
+  summarise(load = max(load, na.rm = TRUE), 
+            .by = c(participant, 
+                    sex, 
+                    time, 
+                    sets,
+                    exercise,
+                    leg)) %>%
+  
+  print()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+
+## Diskusjon
+Denne studien fann ein auke i muskelmasse for både treningsvolum. Auka var signifikant større for multisett enn for singelsett. Dette samsvarar med tidlegare originalstudiar [@Brigatto2019; @Aube2020; @Schoenfeld2019] og metaanalyse  [@Schoenfeld2016] som har sett på effekten av ulike treningsvolum på muskelmasse.
+
+Ein svakheit ved denne studien er at den berre ser på skilnaden mellom eitt og tre sett. Ettersom treningsøktene vart utført 2-3 gongar i veka, tilsvarar det 2-3 sett i veka for singelsett og 6-9 sett i veka for multisett. Både desse forholda er relativt små volum, samanlikna med funna til Brigatto et al. @Brigatto2019 og Baz-Valle et al. @BazValle2022, som fant at henholdsvis 32 set/veke og 12-20 set/veke er optimalt for hypertrofi. Denne studien kan dermed ikkje utelate at fleire enn 6-9 sett i veka ville først til større grad hypertrofi. Studien sin inferens er difor kanskje noko avgrensa.
+
+Ein annan svakheit ved denne studien er at same person trena to ulike volum for kvart bein samstundes. Studiar har demonstrert at styrketrening påverkar hormon i kroppen [@Kraemer1999; @Jansson2022]. Når same deltakar er testperson for to ulike volum, kan ein ikkje kontrollere om endringar i muskelmasse kjem av treninga i seg sjølv, eller av andre forhold som er påverka av det andre treningsvolumet – til dømes hormon i kroppen. Det er difor usikkert kva som skuldar endringane i muskelmasse i denne studien.
+
+## Konklusjon
+
+Studien fant at både treningsvolum auka muskelmasse, der multisett hadde ein signifikant større auke enn singelsett. Grunna kunstig låge treningsvolum og at kvar deltakar var testperson for både treningsvolum samstundes, har studien avgrensa inferens og praktisk tyding.

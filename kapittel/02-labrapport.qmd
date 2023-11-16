@@ -1,0 +1,218 @@
+---
+bibliography: references.bib
+title: "Labrapport: RNA-ekstraksjon og -analyse"
+authors: Hedda Waller, Anders Rauan, Kristian Hauglum, Jørgen Solberg, Sivert Solheim
+editor_options: 
+  chunk_output_type: console
+crossref:
+  fig-prefix: "Figur"
+  fig-title: "Figur"
+  tbl-prefix: "Tabell"
+  tbl-title: "Tabell"
+---
+
+## Introduksjon 
+
+RNA, ribonucleic acid, finnes i alle celler og har viktige oppgaver når det kommer til både produksjon av proteiner og genregulering [@Kukurba2015]. RNA skiller seg fra DNA på flere områder, men en karakteristisk forskjell er RNA-ets utseende og oppbygning. Der DNA består av to tråder i en dobbelheliks, er RNA en tråd med en annen oppbygning. RNA er bygget opp av nukleotider, som videre består av blant annet en nitrogenbase. Disse basene danner basepar AU og GC, og skiller seg fra DNA som danner AT og GC [@Haugen2023]. Gjennom en prosess kalt transkripsjon skapes en RNA-sekvens som er en kopi av et bestemt gen i DNA-et. Denne RNA-sekvensen kalles mRNA, og inneholder oppskriften for å lage et bestemt protein [@Kukurba2015]. Det er rekkefølgen på nitrogenbasene som avgjør proteinet og dets funksjon. Siden mRNA gir oss et genuttrykk, kan molekylet gi mye informasjon om proteiner og gener i kroppen vår. Det kan blant annet fortelle oss hvilke fibertyper vi finner i skjelettmuskulatur, basert på deres uttrykk for en av de tre MHC-isoformene. Gjennom ulike prosesser kan man kvantifisere mRNA ved bruk av DNA-baserte metoder, som f.eks qPCR og RNA sequencing. 
+
+## Metode
+
+### qPCR
+
+qPCR er en metode som brukes til å kvantitativt bestemme mengden av et gen i en prøve [@Taylor2019]. For å kunne gjennomføre metoden kreves cDNA (complementary DNA), noe vi kan omdanne RNA til gjennom reversert transkripsjon. Dermed blir cDNA en kopi av RNA-uttrykket, og man får muligheten til å kvantifisere mengden av et bestemt gen. I vårt forsøk var det uttrykket av myosin heavy chain I (MHC I), myosin heavy chain IIa (MHC IIa) og myosin heavychain IIx (MHC IIx) før og etter en to ukers treningsperiode som var aktuell å se på. I qPCR reaksjonen lages det kopier av disse genuttrykkene, og det blir bruk en fluorescens for å finne ut hvor mange sykluser som trengs for å nå terskelen for en eksponentiell økning i fluorescensen. Ut ifra terskelen kan man derfor beregne konsentrasjonen av målgenet [@Livak2001]. Antall sykluser som er nødvendig kalles Ct-verdi. Lav Ct-verdi er videre et resultat av høy konsentrasjon av RNA i prøven, og vice versa. For å hente ut disse Ct-verdiene brukte vi Delta-Delta-Ct-metoden, og vi kan dermed analysere endringen i MHC-uttrykket fra prøvene før og etter treningsperioden [@Livak2001]. 
+
+Det som trengs for denne protokollen er en real-time PCR-maskin, QuantStudio 5 og en qPCR reaksjonsplate. For å utføre eksperimentet trenger du også ultrarent vann, pipeteringsutstyr og SYBR-green Master mix. For å klargjøre til en qPCR-reaksjon måtte vi sette sammen master-mixen, som inneholder 5μl av Sybr-green 2X master-mix per reaksjon, 1 μl av primermix for både Forward og Reverse (5μl hver), og 2μl H2O. Denne master-mixen er viktig for å forberede reaksjonen.
+
+Deretter tilsatte vi 8 μl av master-mixen vi lagde i 30 ulike brønner på qPCR-platen, før vi tilsatte 2 μl av cDNA i hver av de samme brønnene. Det er viktig å merke seg at mengden her kan justeres etter behov, men at 10 μl er et godt utgangspunkt. Det er også en fotnote som påpeker at konsentrasjonen av primere kan kreve ytterligere optimalisering. Dette er en viktig del av protokollen for å sikre nøyaktige og pålitelige resultater. Etter at brønnene er fylt settes platen inn i real-time qPCR maskinen, QuantStudio 5 [@QuantStudio5]. Her utsettes platen for en rekke temperatursykluser, og maskinen analyserer kontinuerlig data om fluorescensen.
+
+Det første stedet i temperatursyklus er en økning på 1.99 grader/sek til temperaturen nådde 50 grader, der den holdt varmen konstant i 2 min. Etter de to minuttene økte temperaturen med 1.99 grader/sek til den nådde 95 grader som ble holdt i 2 min. Etter de to minuttene startet det en syklus som ble repetert 40 ganger. Syklusen består av et sekund på 95 grader, før den synger med 1.77 grader/sek til 60 grader. 60 grader ble holdt konstant i 30 sekunder før det ble tatt et bilde av brønnens fluorescens. Etter det økte temperaturen med 1.99 grader/sek til 95 grader, der den ble holdt konstant i 15 sekunder. Syklusen ble deretter repetert. Deretter sank temperaturen med 1.77 grader/sek til 60 grader og ble holdt i 1 minutt. Etter det økte temperaturen med 0.15 grader/sek opp til 95 grader, der den ble holdt konstant i 15 sekunder. Etter denne temperatursyklusen ble resultatene presentert som Ct-verdier, og vi kan lese og analysere konsentrasjonen av de ulike genuttrykkene fra brønnene. 
+
+### RNA-ekstraksjon
+
+RNA-ekstraksjon er en metode som brukes for å undersøke kvantiteten og sekvensene i RNA. Første steg i metoden er å senke RNA i TRIzol. Dette gjøres for å hemme RNA-spesifikke nedbrytende enzymer og forstyrrende cellulære komponenter. Deretter ble det lagt til kloroform. Blandingen ble deretter sentrifugert (kloroform og sentrifugering blir til løselig RNA). Etter sentrifugeringen ble den vandige fasen fjernet. Denne inneholder RNA. For å utfelle RNA fra løsningen la vi til isopropanol. Etter dette ble blandingen sentrifugert og vi fikk en pellet som inneholdt RNA. For å fjerne kjemikalier fra tidligere steg ble RNA-pelleten vasket med etanol. RNA-pelleten er ustabil og ble oppbevart i fryser for å opprettholde egenskapene dens. Til slutt kunne vi kvantifisere og sjekke kvaliteten på RNA.
+
+### Fortynningsrekke 
+
+Prøvene ble fortynnet sammen med ultrarent vann. Fortynningen ble doblet for hver gang. Det vil si at i “brønn” nummer en var det lik fordeling mellom ultrarent vann og prøve. I “brønn” nummer to var det halvparten så mye prøve som i “brønn” nummer 1. Dette fortsetter i seks rekker (1, 0,5, 0,25, 0,125, 0,0625 og 0,03125). Ut fra qPCR-fortynningsrekken vil vi kunne lese hvor valide resultatene er. Resultatene kan ses som en lineær modell i @fig-qpcrmodell. 
+
+## Resultat
+
+Resultat fra qPCR er vist i @tbl-qpcr. Fortynningsrekke 1, 1/10 og 1/1000 hadde lite varians mellom Ct1, Ct2 og Ct3 med en variasjonskoeffisient (CV) på 1%. Fortynningsrekke 1/100 viste også lite variasjon mellom Ct1, Ct2 og Ct3 med CV på 2%. I fortynningsrekke 1/10000 ser vi derimot at Ct3 skilte seg betydelig fra Ct1 og Ct2 (34,927 vs 30,0 og 30,2). Dette resulterte i en relativt høy CV på 9%. Resultatene fra @tbl-qpcr ga en primereffektivitet på 86,54% og R² på 0,91.
+
+```{r}
+#| label: tbl-qpcr
+#| tbl-cap: "Resultat fra qPCR"
+#| echo: false
+#| warning: false
+#| message: false
+
+library(gt)
+library(dplyr)
+
+df <- data.frame(Fortynningsrekke = c("1", "1/10", "1/100", "1/1000", "1/10000", "1/100000"),
+                 Ct1 = c("26.09", "27.16", "28.42", "28.85", "30.00", "30.87"),
+                 Ct2 = c("25.68", "27.76", "28.95", "29.36", "30.22", "30.68"),
+                 Ct3 = c("25.86", "27.27", "27.64", "29.16", "34.92", "31.19"),
+                 Ct_gj_snitt = c("25.88", "27.40", "28.34", "29.13", "31.71", "30.91"),
+                 Sample_quant = c("1", "0.5", "0.25", "0.12", "0.06", "0.03"),
+                 Log_sample_quant = c("0.00", "-0.30", "-0.60", "-0.90", "-1.20", "-1.50"),
+                 SD = c("0.21", "0.32", "0.65", "0.25", "2.78", "0.25"),
+                 CV_prosent = c("1", "1", "2", "1", "9", "1"))
+
+# Convert character columns to numeric
+numeric_cols <- c("Ct1", "Ct2", "Ct3", "Ct_gj_snitt", "Sample_quant", "Log_sample_quant", "SD", "CV_prosent")
+df[numeric_cols] <- lapply(df[numeric_cols], function(x) as.numeric(gsub("[*]", "", x)))
+
+gt_table <- df %>%
+  gt() %>%
+  fmt_number(
+    columns = vars(Ct1:CV_prosent),
+    decimals = 2
+  ) %>%
+  fmt_missing(
+    missing_text = "-"
+  )
+
+gt_table
+
+```
+
+Prosentvis andel MHC I, -IIa og -IIx før og etter de fem treningsøktene er vist i @tbl-mhccv. Genuttrykket for MHC I gikk opp fra 18,16% før treningsintervensjonen til 45,54% etter treningsintervensjonen, og fra 57,84% til 85,77% for MHC IIa. Genuttrykket for MHC IIx gikk derimot ned, fra 24,01% til 3,53%.
+
+```{r}
+#| label: tbl-mhccv
+#| tbl-cap: "Gjennomsnittsverdier og CV for MHC I, IIa og IIx ved W0 og W2"
+#| warning: false
+#| message: false
+#| echo: false
+
+library(gt)
+
+# Opprett data frame med gitt data
+data <- data.frame(
+  Time = c("W0*", "W2**"),
+  MHC_I_mean = c(18.25, 20.61),
+  MHC_I_std = c(1.07, 4.85),
+  MHC_I_cv = c(5.8, 23.52),
+  MHC_IIa_mean = c(16.58, 17.61),
+  MHC_IIa_std = c(1.95, 0.69),
+  MHC_IIa_cv = c(11.77, 3.93),
+  MHC_IIx_mean = c(17.85, 22.21),
+  MHC_IIx_std = c(0.45, 0.72),
+  MHC_IIx_cv = c(2.51, 3.26)
+)
+
+# Velg bare de kolonnene du ønsker å inkludere i tabellen
+selected_columns <- c("Time", "MHC_I_mean", "MHC_IIa_mean", "MHC_IIx_mean", "MHC_I_cv", "MHC_IIa_cv", "MHC_IIx_cv")
+
+# Opprett gt-tabell uten standardavvik
+MHCCV <- data %>%
+  dplyr::select(all_of(selected_columns)) %>%
+  gt() %>%
+  fmt_number(
+    columns = vars(starts_with("MHC")),
+    decimals = 2
+  ) %>%
+  tab_footnote("Mean = gjennomsnitt, CV = variasjonskoeffesient, *W0 = før intervensjon, **W2 = etter intervensjon")
+
+# Vis tabellen
+MHCCV
+```
+
+@tbl-genuttrykk viser gjennomsnittsverdier, standardavvik og CV for triplikatene til MHC I, IIa og IIx for W0 og W2.
+
+```{r}
+#| label: tbl-genuttrykk
+#| tbl-cap: "Prosentvis andel genuttrykk for MHC I, IIa og IIx før og etter fem treningsøkter"
+#| warning: false
+#| message: false
+#| echo: false
+#| keep-tex: true
+#| fig-pos: 'H'
+
+
+library(gt)
+
+# Opprett dataframe med dataene
+genuttrykk <- data.frame(
+  Tidspunkt = c("W0*", "W2**"),
+  MHC_I = c(18.16, 45.54),
+  MHC_IIa = c(57.84, 85.77),
+  MHC_IIx = c(24.01, 3.53)
+)
+
+genuttrykk %>%
+  gt() %>%
+  tab_spanner(
+    label = "Genuttrykk",
+    columns = c(MHC_I, MHC_IIa, MHC_IIx)
+  ) %>%
+  fmt_number(
+    columns = c(MHC_I, MHC_IIa, MHC_IIx),
+    decimals = 2
+  ) %>%
+  tab_footnote("*W0 = før intervensjon, **W2 = etter intervensjon")
+  
+
+```
+
+En lineær modell av forholdet mellom mengden prøve og antall sykluser for å nå terskelen for fluorescens er vist i @fig-qpcrmodell. Fortynningsrekke 1/10000, som hadde en uteligger, er punktet lengst til høyre i figuren.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| output: false
+
+# Eksempeldata
+x <- c(25.88, 27.40, 28.34, 29.13, 31.71, 30.91)
+y <- c(0.00, -0.30, -0.60, -0.90, -1.20, -1.50)
+
+# Lineær regresjonsmodell
+model <- lm(y ~ x)
+
+# Vis regresjonsresultater
+summary(model)
+
+```
+
+
+```{r}
+#| fig-cap: "qPCR-modell"
+#| label: fig-qpcrmodell
+#| echo: false
+#| message: false
+#| warning: false
+
+library(ggplot2)
+
+# Example data
+data <- data.frame(
+  x <- c(25.88, 27.40, 28.34, 29.13, 31.71, 30.91),
+  y <- c(0.00, -0.30, -0.60, -0.90, -1.20, -1.50)
+)
+
+
+# Create a ggplot object
+qPCR_modell <- ggplot(data, aes(x = x, y = y))
+
+
+qPCR_modell +
+  geom_point(size = 2) +
+  geom_smooth(method = lm, se = FALSE, color = "black", size = 1) +
+  labs(x = "Ct (Gjennomsnitt)", y = "Log (sample quant)") +
+  theme_minimal()
+
+```
+
+## Diskusjon
+
+Resultatene fra qPCR’en viste relativt lav CV for de fleste fortynningrekker. Unntaket var fortynningsrekke 1/1000, med en CV på 9%. Dette skyldes at verdien ved Ct3 var betydelig høyrere enn verdiene for Ct1 og Ct2. Denne utliggeren kan for eksempel skyldes feil eller unøyaktighet ved pippettering, eller kontaminering av prøven. Outlieren førte i sin tur til en noe lav R2 på 0,91, sammenlignet med gjeldende anbefalinger på >0,98 [@Taylor2010]. Utliggeren kan også ha påvirket primereffektiviteten vår på 86,54%, noe som også er lavere enn det aksepterte intervallet på 90-110% [@Hays2022]. Det kan tenkes at dersom denne utliggeren lå nærmere de to andre verdiene i fortynningrekken, ville primereffektiviteten og R2 havnet innenfor anbefalingene. Dersom vi fjerner denne utliggeren, får vi en mye lavere CV på 1%. Samtidig endres R2 til 0,99 og primereffektivitet til 103,71, hvorav begge desse verdiene er innenfor deres respektive anbefalinger.
+
+I @tbl-mhccv kan vi se en økning i MHCIIA, hvor prosentandelen gikk fra 57,84% til 85,77%. Samtidig ser vi en reduksjon av MHCIIX, som gikk fra en prosentandel på 24,01% til 3,53%. Dette er i tråd med observasjonene til Andersen og Aagaard @Andersen2000, som undersøkte forandringer i muskelfibertype etter tre måneder med tung styrketrening. Vi kan også observere en stor økning i MHCI, som gikk fra en prosentandel på 18,16% til 45,54%. Widrick et al. @Widrick2002 fant hverken økning eller redusering av MHC I etter styrketrening i sin 12-ukers studie, så det er dermed usikkert hva grunnen til denne store økningen er. Grunnet disse store forskjellene i muskelfibersammensetning etter kun fem treningsøkter kan man anta at testpersonen er utrent, og at en trent person ville hatt betraktelig mindre endringer i sammensetning.
+
+Den store økningen i MHC I uttrykk fra W0 til W2 kan også skyldes feil i pipettering. MHC I for W2 hadde en CV på 23,52 som viser til store variasjoner mellom de tre målingene. Det er ikke notert avvik knyttet til pipettering i rapporten, noe som gjør det vanskelig å forklare eksakt hva som er årsaken til variasjonen.
+
+## Konklusjon 
+
+Det ser ut som at en to ukers treningsperiode øker genutrykket for MHC IIa og reduserer uttrykket for MHC IIx. Dette er i tråd med tidligere forskning [@Andersen2000]. Det ser også ut som at uttrykket for MHC I øker etter en treningsperiode, men dette er noe usikkert ettersom denne økningen kan ha vært et resultat av målefeil. Det er også viktig å tolke resultatene med forsiktighet ettersom det kun er undersøkt en person.

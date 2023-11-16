@@ -1,0 +1,91 @@
+---
+bibliography: references.bib
+title: "Vitskapsfilosofi"
+author: Sivert Solheim
+editor_options: 
+  chunk_output_type: console
+editor: 
+  markdown: 
+    wrap: sentence
+---
+
+## Induksjonsproblemet
+
+### Introduksjon
+
+Hume hevda at det ikkje er mogleg å rasjonelt grunngi bruken av induksjon.
+Dette filosofiske standpunktet har vore gjenstand for debatt og usemje hjå filosofar og vitskapspersonar, og blir ofte referert til som «induksjonsproblemet».
+Denne teksten vil drøfte argumenta Hume brukar for å nå denne konklusjonen, og vurdere om det er mogleg å unngå konklusjonen.
+
+### Induksjonsproblemet
+
+Hume hevdar gjennom induksjonsproblemet at slutningar som er basert på induksjon, aldri kan vere heilt sikre.
+Induksjonsproblemet har difor utfordra den moderne empiriske vitskapen, som ofte er basert på induksjon.
+Hume meiner at induksjon er basert på ein føresetnad om at naturen er konstant, og at framtida vil vere lik fortida.
+Han meiner at dersom framtida ikkje er lik fortida, kan ein ikkje hevde at noko vil skje basert på noko som har skjedd.
+Ettersom vi ikkje kan grunngje føresetnaden om at framtida vil vere lik fortida, meiner Hume at induksjon er basert på ein usikker føresetnad.
+
+### Er det mogleg å unngå induksjonsproblemet?
+
+Er det mogleg å unngå Hume sin konklusjon?
+Nokre filosofar har prøvd å finne måtar å unngå problema med induksjon.
+Ei tilnærming er å hevde at induksjon er eit uunngåeleg og naudsynt aspekt av menneskeleg tenking og vitskapleg metode, sjølv om det ikkje kan rasjonelt grunngjevast.
+Denne tilnærminga anerkjenner Humes bekymringar, men hevdar at vi likevel er nøydde til å stole på induksjon for å fungere i verda.
+
+Ei anna tilnærming er å argumentere for at induksjon kan støttast av sannsynslære.
+Dette inneber å bruke sannsynsberekning for å evaluere sannsynet for at våre induktive slutningar er korrekte.
+Sjølv om dette ikkje gjev ein absolutt garanti, gjev det i det minste ein måte å vurdera kor sannsynleg det er at våre induktive slutningar er rette.
+Likevel er denne tilnærminga òg kritisert fordi ho ikkje fullstendig løyser problema med induksjon.
+
+Ei tredje tilnærming er å hevde at Hume tar feil når han hevdar at induksjon ikkje kan rasjonelt grunngjevast.
+Nokre filosofar hevdar at vi kan bruke a priori-argumentasjon, det vil seie grunngjeving som ikkje er basert på spesifikke observasjonar, men heller generell kunnskap og fornuft, for å støtte induksjon.
+Eit døme på a priori-argumentasjon er dersom ein seier at «alle svaner er fuglar».
+Denne påstanden krevjar ikkje kunnskap om spesifikke observasjonar.
+Dersom ein derimot hevdar at «svaner kan fly», impliserer det at ein snakkar frå spesifikk kunnskap eller erfaring, noko som blir kalla a posteriori-argumentasjon.
+Ein kan hevde at ein må stole på induksjon for å kunne handle i verda, og difor er det rasjonelt å gjere det. Dersom ein ikkje meiner det er rasjonelt å bruke induksjon, er det umogleg å anta kva konsekvensane av ei handling er.
+
+### Konklusjon
+
+For å konkludere, kan det hevdast at Hume sitt induksjonsproblem er vanskeleg å motsetje seg, men kanskje endå vanskelegare å forhalde seg til.
+Sjølv om det er ulike tilnærmingar til problemet, har ingen av dei gjeve ei fullstendig og overbevisande løysing.
+Hume sin påstand utfordrar dermed vår forståing av korleis vi oppnår kunnskap og korleis vitskapen fungerer.
+Det er eit problem som framleis er relevant og viktig for filosofisk refleksjon og vitskapleg metode i dag.
+
+## Falsifikasjonisme
+
+### Introduksjon
+
+Falsifikasjonisme er ein filosofisk og vitskapleg tilnærming som vart utvikla av den østerriksk-engelske filosofen Karl Popper på midten av det 1900-talet.
+Denne tilnærminga legg vekt på falsifikasjon som ein viktig metode for å avgjere gyldigheita til vitskaplege teoriar.
+Eg vil i denne teksten først forklare falsifikasjonisme, deretter presentere eitt problem med denne teorien, og til slutt vurdera om problemet kan løysast.
+
+### Problemet med falsifikasjonisme
+
+Falsifikasjonisme inneber at ein vitskapleg teori må vere formulert på ein måte som gjer det mogleg å falsifisere den, det vil seie å vise at ho er falsk. Ifølgje Popper er vitskapen kjenneteikna av at han endrar seg over tid, og det er umogleg å bevise absolutt sanning i vitskapen.
+Popper hevda til og med at det er umogleg å etablere at ein teori er sannsynleg. Ein teori må vere formulert på ein slik måte at det er mogleg å førestilla seg ein observasjon eller eit eksperiment som, om det er vellykka, ville visa at teorien er feil.
+Dersom ein teori ikkje oppfyller dette kravet, vert ho rekna som pseudovitskapleg.
+
+Dette fører oss til eit problem knytt til falsifikasjonisme, nemleg at det kan vere utfordrande å identifisere konkrete observasjonar eller eksperiment som effektivt kan falsifisera ein teori.
+Dette er særleg relevant for teoriar som er formulert på ein måte som gjer dei vage eller upresise.
+Til dømes, om nokon postulerer at "alle svanar er kvite," kan det vere utfordrande å finne ein einaste observasjon som kan motbevise denne påstanden, særleg om ein ikkje har tilgang til eit ugrensa tal observasjonar.
+Sjølv om det er mogleg å finna mange kvite svanar, gir det oss ikkje naudsynt grunnlag for å hevda at det ikkje finst svarte svanar nokon stad i verda.
+
+### Moglege løysingar på problemet
+
+Ein kan vidare spørje seg korleis ein kan løyse dette problemet.
+Ei mogleg løysing, er å krevje at ein teori skal vere så presis og spesifikk som mogleg.
+Jo meir spesifikk ein teori er, desto lettare er det å finne observasjonar eller eksperiment som kan falsifisere teorien.
+Difor vil falsifikasjonisme oppmuntre vitskapsfolk til å formulerr teoriar på ein slik måte at dei er klart testbare.
+
+Ei anna mogleg tilnærming er å anerkjenne at falsifikasjonisme kanskje ikkje kan vere den einaste metoden for å vurdera gyldigheita til vitskaplege teoriar.
+Nokre vitskaplege teoriar, særleg innanfor område som kompleksitetsvitskap og klimavitskap, kan vere for komplekse eller abstrakte til å kunne testast direkte gjennom observasjon eller eksperiment.
+I slike tilfelle kan det vere naudsynt å stole på ei breiare tilnærming som inkluderer semje med andre etablerte teoriar, forutsigingsevne og empirisk støtte frå ei rekkje kjelder.
+
+Sjølv om problemet med falsifikasjonisme kan delvis løysast ved å krevje meir presise teoriar, vil det framleis vere situasjonar der vitskaplege teoriar er vage eller komplekse, og der falsifikasjonisme aleine kan vere utilstrekkeleg som eit vurderingskriterium.
+Difor er det viktig å anerkjenne at vitskaplege teoriar kan ha verdi sjølv om dei ikkje alltid kan testast på ein enkel og direkte måte.
+Teoriane må vurderast i ein breiare samanheng som tek omsyn til deira forutsigingsevne og semje med tidlegare etablert kunnskap.
+
+### Konklusjon
+
+Avslutningsvis kan falsifikasjonisme vere ei verdifull tilnærming for å evaluere vitskaplege teoriar, men det er viktig å vere merksam på utfordringane knytt til å identifisera effektive måtar å falsifisera teoriar på.
+Sjølv om problemet med falsifikasjonisme kan delvis løysast ved å krevje meir presise teoriar, er det òg naudsynt å anerkjenne at vitskaplege teoriar kan ha verd når dei ikkje alltid kan testast på ein enkel og direkte måte.

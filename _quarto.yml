@@ -7,16 +7,18 @@ book:
   date: "11/17/2023"
   chapters:
     - index.qmd
-    - 01-reliabilitet.qmd
-    - 02-vitenskapsfilosofi.qmd
-    - references.qmd
+    - kapittel/01-reliabilitet.qmd
+    - kapittel/02-labrapport.qmd
+    - kapittel/03-vitenskapsfilosofi.qmd
+    - kapittel/04-studiedesign.qmd
+    - kapittel/05-analyse-av-repeterte-forsøk.qmd
 
-bibliography: resources/references.bib
+bibliography: kapittel/references.bib
+csl: resources/vancouver.csl
 
 crossref:
   fig-title: "**Figur**"
   tbl-title: "**Tabell**"
-  fig-
 
 format:
   html:
